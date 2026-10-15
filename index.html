@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore water filters, compare products and request a demo enquiry with PureWater.">
+  <title>PureWater | Clean Water for Your Home</title>
+
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #17324d;
+      background: #f5f9fd;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1120px, 92%); margin: auto; }
+
+    header {
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 12px #17324d12;
+    }
+    .nav {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 14px 0;
+    }
+    .logo { font-size: 25px; font-weight: 800; color: #0878c9; }
+    .nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .nav-links a { color: #17324d; font-weight: 700; font-size: 14px; }
+    .nav-links a:hover { color: #0878c9; }
+
+    .btn {
+      display: inline-block;
+      background: #0878c9;
+      color: white;
+      padding: 13px 20px;
+      border-radius: 9px;
+      font-weight: 700;
+      border: 0;
+      cursor: pointer;
+    }
+    .btn:hover { background: #075fa0; }
+    .btn-light { background: #e6f3ff; color: #0878c9; }
+
+    .hero {
+      background: linear-gradient(120deg, #e6f4ff, #fff);
+      padding: 65px 0;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .eyebrow {
+      color: #0878c9;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      font-size: 12px;
+    }
+    h1 { font-size: clamp(36px, 5vw, 58px); line-height: 1.12; margin: 12px 0 20px; }
+    h2 { font-size: clamp(27px, 3vw, 36px); line-height: 1.2; }
+    .hero p { color: #52677c; font-size: 18px; max-width: 530px; }
+    .hero img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 22px;
+      box-shadow: 0 18px 40px #17324d20;
+    }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+
+    section { padding: 62px 0; }
+    .section-head { text-align: center; max-width: 680px; margin: 0 auto 32px; }
+    .section-head p, .muted { color: #61758a; }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 24px #17324d0d;
+      border: 1px solid #e4edf5;
+    }
+    .card img { width: 100%; height: 220px; object-fit: cover; }
+    .card-body { padding: 22px; }
+    .card h3 { margin: 0 0 8px; }
+    .price { font-size: 23px; font-weight: 800; color: #0878c9; margin: 12px 0; }
+    .card p { color: #61758a; }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .benefit {
+      padding: 24px;
+      background: white;
+      border: 1px solid #e4edf5;
+      border-radius: 14px;
+    }
+    .benefit span { font-size: 30px; }
+
+    .guide {
+      background: #e8f5ff;
+      border-radius: 20px;
+      padding: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .blog-card {
+      padding: 23px;
+      background: white;
+      border-radius: 14px;
+      border: 1px solid #e4edf5;
+    }
+    .blog-card a { color: #0878c9; font-weight: 700; }
+
+    .cta {
+      background: #123b5d;
+      color: white;
+      text-align: center;
+    }
+    .cta p { color: #d5e7f5; }
+
+    footer { background: #0b2338; color: white; padding: 30px 0; }
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    footer a { color: #d5e7f5; }
+
+    @media (max-width: 760px) {
+      .hero-grid, .products, .benefits, .blog-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero { padding: 42px 0; }
+      .hero img { height: 280px; }
+      .nav { align-items: flex-start; }
+      .nav-links { gap: 12px; }
+      .guide { padding: 24px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="logo" href="index.html">💧 PureWater</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="water-filters.html">Products</a>
+        <a href="#benefits">Benefits</a>
+        <a href="free-guide.html">Free Guide</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">PureWater Demo Store</div>
+          <h1>Better Water.<br>Better Everyday.</h1>
+          <p>Explore water filtration options for your home. Compare products and find a solution that suits your needs.</p>
+          <div class="actions">
+            <a class="btn" href="water-filters.html" data-event="view_products_click">Explore Products</a>
+            <a class="btn btn-light" href="contact.html" data-event="hero_enquiry_click">Request an Enquiry</a>
+          </div>
+          <p><small>Educational demo website. Products and prices are illustrative.</small></p>
+        </div>
+        <img
+          src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1100&q=85"
+          alt="Clean modern home interior"
+          fetchpriority="high">
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Our Collection</div>
+          <h2>Explore Our Water Filters</h2>
+          <p>Compare three demo products and open their detail pages.</p>
+        </div>
+
+        <div class="products">
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80" alt="Home water filtration equipment" loading="lazy">
+            <div class="card-body">
+              <h3>Best Overall Filter</h3>
+              <p>For households looking for an all-round filtration option.</p>
+              <div class="price">₹4,999</div>
+              <a class="btn" href="product-details.html?product=best-overall" data-event="product_click" data-product="best-overall">View Product</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1564419320461-6870880221ad?auto=format&fit=crop&w=800&q=80" alt="Water purifier product" loading="lazy">
+            <div class="card-body">
+              <h3>Budget Friendly Filter</h3>
+              <p>A demo option for customers comparing lower-cost products.</p>
+              <div class="price">₹2,499</div>
+              <a class="btn" href="product-details.html?product=budget-friendly" data-event="product_click" data-product="budget-friendly">View Product</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=800&q=80" alt="Clean drinking water bottle" loading="lazy">
+            <div class="card-body">
+              <h3>Compact Water Filter</h3>
+              <p>A compact demo option for smaller kitchens and spaces.</p>
+              <div class="price">₹3,299</div>
+              <a class="btn" href="product-details.html?product=compact" data-event="product_click" data-product="compact">View Product</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="actions" style="justify-content:center">
+          <a class="btn btn-light" href="water-filters.html">View All Products</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="benefits" style="background:#edf6fd">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Why PureWater</div>
+          <h2>Make a More Informed Choice</h2>
+          <p>Learn about product options and compare features before making a decision.</p>
+        </div>
+        <div class="benefits">
+          <div class="benefit">
+            <span>🔎</span>
+            <h3>Compare Options</h3>
+            <p class="muted">Review different demo products in one place.</p>
+          </div>
+          <div class="benefit">
+            <span>🏠</span>
+            <h3>Home-Focused</h3>
+            <p class="muted">Explore options designed around everyday household needs.</p>
+          </div>
+          <div class="benefit">
+            <span>💬</span>
+            <h3>Ask Questions</h3>
+            <p class="muted">Use the enquiry form to practise the lead generation journey.</p>
+          </div>
+        </div>
+        <div class="actions" style="justify-content:center">
+          <a class="btn" href="why-choose-us.html">Why Choose Us</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container guide">
+        <div>
+          <div class="eyebrow">Free Learning Resource</div>
+          <h2>Get the Water Filter Buying Guide</h2>
+          <p class="muted">Explore our downloadable demo guide and practise tracking file downloads.</p>
+        </div>
+        <a class="btn" href="free-guide.html" data-event="guide_click">Get Free Guide</a>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Learn More</div>
+          <h2>Helpful Articles</h2>
+          <p>Educational content for visitors exploring water filters.</p>
+        </div>
+        <div class="blog-grid">
+          <article class="blog-card">
+            <h3>How to Choose a Water Filter</h3>
+            <p class="muted">Learn what to compare before choosing a product.</p>
+            <a href="blog-best-water-filter.html">Read article →</a>
+          </article>
+          <article class="blog-card">
+            <h3>RO vs UV vs UF</h3>
+            <p class="muted">Understand the basic differences between technologies.</p>
+            <a href="blog-ro-vs-uv-vs-uf.html">Read article →</a>
+          </article>
+          <article class="blog-card">
+            <h3>Water Filter Buying Checklist</h3>
+            <p class="muted">Use a checklist to compare your options.</p>
+            <a href="blog-buying-checklist.html">Read article →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2>Need Help Choosing?</h2>
+        <p>Send a demo enquiry and explore how lead tracking works.</p>
+        <a class="btn" href="contact.html" data-event="bottom_enquiry_click">Contact Us</a>
+        <p><small>This website is for practice. No real sale or payment is processed.</small></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div><strong>💧 PureWater</strong><br><small>Water Filter Demo Website</small></div>
+      <div>
+        <a href="privacy-policy.html">Privacy Policy</a> ·
+        <a href="contact.html">Contact</a> ·
+        <a href="water-filters.html">Products</a>
+      </div>
+      <small>© 2026 PureWater Demo</small>
+    </div>
+  </footer>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    document.querySelectorAll("[data-event]").forEach(function (element) {
+      element.addEventListener("click", function () {
+        window.dataLayer.push({
+          event: element.dataset.event,
+          button_text: element.textContent.trim(),
+          product_id: element.dataset.product || "",
+          demo_mode: true
+        });
+      });
+    });
+  </script>
+</body>
+</html>
