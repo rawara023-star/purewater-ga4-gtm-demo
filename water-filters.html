@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Filters | PureWater</title>
+  <meta name="description" content="Explore home water filters and compare demo products at PureWater.">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; color: #183047; background: #f7fbff; }
+    header { background: white; padding: 18px 7%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    header a { color: #183047; text-decoration: none; margin-right: 14px; }
+    .logo { font-size: 24px; font-weight: bold; color: #087fbd; }
+    .hero { background: #e6f6ff; text-align: center; padding: 55px 20px; }
+    .hero h1 { font-size: 38px; margin: 0 0 12px; }
+    .hero p { color: #536b7d; line-height: 1.7; }
+    .container { max-width: 1100px; margin: auto; padding: 35px 20px 60px; }
+    .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+    .card { background: white; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 18px #17304712; }
+    .card img { width: 100%; height: 210px; object-fit: cover; }
+    .content { padding: 20px; }
+    .content h2 { font-size: 21px; }
+    .content p { color: #5d7080; line-height: 1.6; }
+    .price { color: #087fbd; font-size: 23px; font-weight: bold; }
+    .btn { display: inline-block; background: #087fbd; color: white; padding: 12px 17px; border-radius: 7px; text-decoration: none; margin: 5px 5px 5px 0; }
+    .secondary { background: #e8f5fc; color: #087fbd; }
+    .note { background: #fff7df; padding: 15px; border-radius: 8px; line-height: 1.6; margin-bottom: 25px; }
+    footer { background: #102c42; color: white; text-align: center; padding: 25px; }
+    footer a { color: white; margin: 0 8px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">PureWater</a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="water-filters.html">Water Filters</a>
+    <a href="free-guide.html">Free Guide</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Explore Our Water Filters</h1>
+  <p>Compare demo products and find an option for your home.</p>
+</section>
+
+<main class="container">
+  <div class="note">
+    <strong>Demo website:</strong> Products and prices are for practice only.
+    No real orders or payments will be processed.
+  </div>
+
+  <section class="products" id="product-list">
+
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=700&q=80" alt="Water filtration product">
+      <div class="content">
+        <h2>PureWater RO Filter</h2>
+        <p>Demo reverse osmosis filter for exploring home water treatment options.</p>
+        <p class="price">₹8,999</p>
+        <a class="btn" data-event="select_item" data-item="PureWater RO Filter" href="product-details.html?item=ro">View Details</a>
+        <a class="btn secondary" data-event="add_to_cart" data-item="PureWater RO Filter" href="checkout.html?item=ro">Demo Buy</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=700&q=80" alt="Clean drinking water">
+      <div class="content">
+        <h2>PureWater UV Filter</h2>
+        <p>A demo UV filtration option for comparing water purification products.</p>
+        <p class="price">₹5,499</p>
+        <a class="btn" data-event="select_item" data-item="PureWater UV Filter" href="product-details.html?item=uv">View Details</a>
+        <a class="btn secondary" data-event="add_to_cart" data-item="PureWater UV Filter" href="checkout.html?item=uv">Demo Buy</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1564419320461-6870880221ad?auto=format&fit=crop&w=700&q=80" alt="Water filter for home">
+      <div class="content">
+        <h2>PureWater UF Filter</h2>
+        <p>A demo ultrafiltration product for learning how product pages work.</p>
+        <p class="price">₹3,499</p>
+        <a class="btn" data-event="select_item" data-item="PureWater UF Filter" href="product-details.html?item=uf">View Details</a>
+        <a class="btn secondary" data-event="add_to_cart" data-item="PureWater UF Filter" href="checkout.html?item=uf">Demo Buy</a>
+      </div>
+    </article>
+
+  </section>
+
+  <div style="text-align:center; margin-top:35px;">
+    <a class="btn" data-event="generate_lead" href="contact.html">Ask for a Recommendation</a>
+    <a class="btn secondary" href="index.html">Back to Home</a>
+  </div>
+</main>
+
+<footer>
+  <p>PureWater — Marketing Tracking Demo</p>
+  <a href="privacy-policy.html">Privacy Policy</a>
+  <a href="contact.html">Contact</a>
+  <p>Demo products only. No real payments.</p>
+</footer>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: "view_item_list",
+    ecommerce: {
+      item_list_name: "Water Filters",
+      items: [
+        { item_id: "ro_filter", item_name: "PureWater RO Filter", price: 8999, index: 0 },
+        { item_id: "uv_filter", item_name: "PureWater UV Filter", price: 5499, index: 1 },
+        { item_id: "uf_filter", item_name: "PureWater UF Filter", price: 3499, index: 2 }
+      ]
+    },
+    demo_mode: true
+  });
+
+  document.querySelectorAll("[data-event]").forEach(function(link) {
+    link.addEventListener("click", function() {
+      window.dataLayer.push({
+        event: link.dataset.event,
+        item_name: link.dataset.item || "",
+        demo_mode: true
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
