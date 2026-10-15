@@ -5,28 +5,111 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book a Consultation | PureWater</title>
+
   <style>
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: Arial, sans-serif; color: #183047; background: #f5faff; }
-    header { background: white; padding: 18px 7%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-    header a { color: #183047; text-decoration: none; margin-right: 14px; }
-    .logo { font-size: 24px; font-weight: bold; color: #087fbd; }
-    main { max-width: 760px; margin: auto; padding: 40px 20px 60px; }
-    .card { background: white; padding: 30px; border-radius: 14px; box-shadow: 0 4px 18px #17304712; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #183047;
+      background: #f5faff;
+    }
+
+    header {
+      background: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    header a {
+      color: #183047;
+      text-decoration: none;
+      margin-right: 14px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #087fbd;
+    }
+
+    main {
+      max-width: 760px;
+      margin: auto;
+      padding: 40px 20px 60px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px #17304712;
+    }
+
     h1 { margin-top: 0; font-size: 32px; }
-    p { color: #5d7080; line-height: 1.7; }
-    label { display: block; margin: 17px 0 7px; font-weight: bold; }
-    input, select, textarea { width: 100%; padding: 13px; border: 1px solid #cbd9e3; border-radius: 7px; font: inherit; }
-    textarea { min-height: 90px; }
-    .btn { display: inline-block; border: 0; background: #087fbd; color: white; padding: 14px 22px; border-radius: 7px; font-size: 16px; cursor: pointer; margin-top: 20px; }
-    .note { background: #fff7df; padding: 13px; border-radius: 8px; }
-    #message { display: none; background: #e6f6eb; color: #176534; padding: 15px; border-radius: 8px; margin-top: 20px; }
-    footer { background: #102c42; color: white; text-align: center; padding: 25px; }
+
+    p {
+      color: #5d7080;
+      line-height: 1.7;
+    }
+
+    label {
+      display: block;
+      margin: 17px 0 7px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #cbd9e3;
+      border-radius: 7px;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #087fbd;
+      color: white;
+      padding: 14px 22px;
+      border: 0;
+      border-radius: 7px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      text-decoration: none;
+    }
+
+    .note {
+      background: #fff7df;
+      padding: 13px;
+      border-radius: 8px;
+    }
+
+    footer {
+      background: #102c42;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
   </style>
 </head>
+
 <body>
+
 <header>
   <a class="logo" href="index.html">PureWater</a>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="water-filters.html">Water Filters</a>
@@ -36,19 +119,47 @@
 
 <main>
   <section class="card">
+
     <h1>Book a Water Filter Consultation</h1>
-    <p>Choose a preferred date and time for this demo booking journey.</p>
-    <p class="note"><strong>Demo mode:</strong> This form does not create a real appointment or save personal information. Use sample details only.</p>
+
+    <p>
+      Choose your preferred date and time for this demo booking journey.
+    </p>
+
+    <p class="note">
+      <strong>Demo mode:</strong> This form does not create a real appointment
+      or save personal information. Use sample details only.
+    </p>
 
     <form id="booking-form">
+
       <label for="name">Full Name *</label>
-      <input id="name" name="name" type="text" required placeholder="Enter sample name">
+      <input
+        id="name"
+        name="name"
+        type="text"
+        required
+        placeholder="Demo Customer"
+      >
 
       <label for="email">Email Address *</label>
-      <input id="email" name="email" type="email" required placeholder="demo@example.com">
+      <input
+        id="email"
+        name="email"
+        type="email"
+        required
+        placeholder="demo@example.com"
+      >
 
       <label for="phone">Phone Number *</label>
-      <input id="phone" name="phone" type="tel" required pattern="[0-9+\-\s()]{7,20}" placeholder="Enter sample phone number">
+      <input
+        id="phone"
+        name="phone"
+        type="tel"
+        pattern="[0-9+\-\s()]{7,20}"
+        required
+        placeholder="Sample phone number"
+      >
 
       <label for="date">Preferred Date *</label>
       <input id="date" name="date" type="date" required>
@@ -71,13 +182,18 @@
       </select>
 
       <label for="notes">Additional Notes</label>
-      <textarea id="notes" name="notes" placeholder="Optional demo notes"></textarea>
+      <textarea
+        id="notes"
+        name="notes"
+        placeholder="Optional demo notes"
+      ></textarea>
 
-      <button class="btn" type="submit">Submit Demo Booking</button>
+      <button class="btn" type="submit">
+        Submit Demo Booking
+      </button>
+
     </form>
 
-    <div id="message" role="status"></div>
-    <p><a href="water-filters.html">← Back to Water Filters</a></p>
   </section>
 </main>
 
@@ -88,23 +204,24 @@
 <script>
   window.dataLayer = window.dataLayer || [];
 
-  document.getElementById("booking-form").addEventListener("submit", function(event) {
-    event.preventDefault();
+  document
+    .getElementById("booking-form")
+    .addEventListener("submit", function(event) {
 
-    window.dataLayer.push({
-      event: "booking_submit",
-      form_name: "Water Filter Consultation",
-      booking_date: document.getElementById("date").value,
-      booking_time: document.getElementById("time").value,
-      demo_mode: true
+      event.preventDefault();
+
+      window.dataLayer.push({
+        event: "booking_submit",
+        form_name: "Water Filter Consultation",
+        booking_date: document.getElementById("date").value,
+        booking_time: document.getElementById("time").value,
+        demo_mode: true
+      });
+
+      window.location.href = "thank-you.html";
+
     });
-
-    const message = document.getElementById("message");
-    message.textContent = "Demo booking submitted! No appointment was created and no information was saved.";
-    message.style.display = "block";
-
-    this.reset();
-  });
 </script>
+
 </body>
 </html>
