@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | PureWater</title>
+  <meta name="robots" content="noindex">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; background: #f3faff; color: #183047; }
+    header { background: white; padding: 18px 7%; }
+    header a { color: #087fbd; text-decoration: none; font-size: 24px; font-weight: bold; }
+    main { min-height: 75vh; display: grid; place-items: center; padding: 30px 20px; }
+    .card { max-width: 600px; width: 100%; background: white; padding: 40px 25px; border-radius: 16px; text-align: center; box-shadow: 0 4px 20px #17304712; }
+    .check { margin: auto; width: 65px; height: 65px; border-radius: 50%; display: grid; place-items: center; background: #e2f7e9; color: #168443; font-size: 36px; }
+    h1 { font-size: 32px; }
+    p { color: #5d7080; line-height: 1.7; }
+    .btn { display: inline-block; background: #087fbd; color: white; padding: 13px 20px; border-radius: 7px; text-decoration: none; margin: 8px; }
+    .secondary { background: #e8f5fc; color: #087fbd; }
+    footer { text-align: center; background: #102c42; color: white; padding: 22px; }
+  </style>
+</head>
+<body>
+<header>
+  <a href="index.html">PureWater</a>
+</header>
+
+<main>
+  <section class="card">
+    <div class="check" aria-hidden="true">✓</div>
+    <h1>Thank You!</h1>
+    <p>Your demo enquiry journey has reached the confirmation page.</p>
+    <p><strong>Practice mode:</strong> No enquiry was sent or saved. This page is for learning website analytics and conversion tracking.</p>
+    <a class="btn" href="water-filters.html">Explore Water Filters</a>
+    <a class="btn secondary" href="index.html">Back to Home</a>
+  </section>
+</main>
+
+<footer>
+  <p>PureWater — Marketing Tracking Demo</p>
+</footer>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: "demo_thank_you_view",
+    page_type: "thank_you",
+    demo_mode: true
+  });
+</script>
+</body>
+</html>
