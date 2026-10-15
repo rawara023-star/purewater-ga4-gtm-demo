@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation | PureWater</title>
+  <meta name="robots" content="noindex">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; color: #183047; background: #f5faff; }
+    header { background: white; padding: 18px 7%; }
+    header a { color: #087fbd; text-decoration: none; font-size: 24px; font-weight: bold; }
+    main { min-height: 75vh; display: grid; place-items: center; padding: 30px 20px; }
+    .card { max-width: 650px; width: 100%; background: white; padding: 35px; border-radius: 16px; box-shadow: 0 4px 18px #17304712; }
+    .check { margin: auto; width: 65px; height: 65px; border-radius: 50%; display: grid; place-items: center; background: #e2f7e9; color: #168443; font-size: 36px; }
+    h1, .center { text-align: center; }
+    p { color: #5d7080; line-height: 1.7; }
+    .summary { background: #f4f9fc; padding: 18px; border-radius: 10px; margin-top: 22px; }
+    .line { display: flex; justify-content: space-between; gap: 15px; padding: 8px 0; }
+    .total { font-size: 21px; font-weight: bold; color: #087fbd; border-top: 1px solid #d8e4ec; margin-top: 8px; padding-top: 14px; }
+    .btn { display: inline-block; background: #087fbd; color: white; padding: 13px 20px; border-radius: 7px; text-decoration: none; margin: 8px 5px; }
+    .secondary { background: #e8f5fc; color: #087fbd; }
+    .note { background: #fff7df; padding: 13px; border-radius: 8px; }
+    footer { background: #102c42; color: white; text-align: center; padding: 25px; }
+  </style>
+</head>
+<body>
+<header>
+  <a href="index.html">PureWater</a>
+</header>
+
+<main>
+  <section class="card">
+    <div class="check" aria-hidden="true">✓</div>
+    <h1>Demo Order Confirmation</h1>
+    <p class="center">Your demo checkout journey is complete!</p>
+
+    <p class="note"><strong>Important:</strong> This is a tracking demo. No real purchase, payment or delivery has occurred.</p>
+
+    <div class="summary">
+      <h2>Demo Order Summary</h2>
+      <div class="line"><span>Product</span><strong id="product-name">Demo Product</strong></div>
+      <div class="line"><span>Price</span><strong id="unit-price">₹0</strong></div>
+      <div class="line"><span>Quantity</span><strong id="quantity">1</strong></div>
+      <div class="line total"><span>Demo Total</span><span id="total">₹0</span></div>
+    </div>
+
+    <p id="status-message">Preparing demo order details...</p>
+
+    <div class="center">
+      <a class="btn" href="water-filters.html">Continue Shopping</a>
+      <a class="btn secondary" href="index.html">Back to Home</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>PureWater — Marketing Tracking Demo</p>
+</footer>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  let order = null;
+
+  try {
+    order = JSON.parse(sessionStorage.getItem("purewater_demo_order") || "null");
+  } catch (error) {
+    order = null;
+  }
+
+  if (order && order.product_id && order.quantity && order.total) {
+    document.getElementById("product-name").textContent = order.product_name;
+    document.getElementById("unit-price").textContent =
+      "₹" + Number(order.price).toLocaleString("en-IN");
+    document.getElementById("quantity").textContent = order.quantity;
+    document.getElementById("total").textContent =
+      "₹" + Number(order.total).toLocaleString("en-IN");
+    document.getElementById("status-message").textContent =
+      "Demo order completed. No payment was taken.";
+
+    const transactionId = "DEMO-" + Date.now();
+
+    window.dataLayer.push({
+      event: "purchase",
+      ecommerce: {
+        transaction_id: transactionId,
+        currency: "INR",
+        value: Number(order.total),
+        items: [{
+          item_id: order.product_id,
+          item_name: order.product_name,
+          price: Number(order.price),
+          quantity: Number(order.quantity)
+        }]
+      },
+      demo_mode: true
+    });
+  } else {
+    document.getElementById("product-name").textContent = "No demo order found";
+    document.getElementById("unit-price").textContent = "—";
+    document.getElementById("quantity").textContent = "—";
+    document.getElementById("total").textContent = "—";
+    document.getElementById("status-message").textContent =
+      "To test this page, return to the products page, open Demo Buy, and complete the demo checkout.";
+  }
+</script>
+</body>
+</html>
