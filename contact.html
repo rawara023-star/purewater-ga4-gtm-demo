@@ -5,27 +5,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | PureWater</title>
+  <meta name="description" content="Contact PureWater for a demo water filter enquiry.">
   <style>
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: Arial, sans-serif; color: #183047; background: #f5faff; }
-    header { background: white; padding: 18px 7%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #183047;
+      background: #f5faff;
+    }
+    header {
+      background: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
     header a { color: #183047; text-decoration: none; margin-right: 14px; }
     .logo { font-size: 24px; font-weight: bold; color: #087fbd; }
-    main { max-width: 850px; margin: auto; padding: 40px 20px 60px; }
-    .form-card { background: white; padding: 30px; border-radius: 14px; box-shadow: 0 4px 18px #17304712; }
+    main { max-width: 800px; margin: auto; padding: 40px 20px 60px; }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px #17304712;
+    }
     h1 { margin-top: 0; font-size: 32px; }
     p { color: #5d7080; line-height: 1.7; }
     label { display: block; margin: 17px 0 7px; font-weight: bold; }
-    input, textarea, select { width: 100%; padding: 13px; border: 1px solid #cbd9e3; border-radius: 7px; font: inherit; }
-    textarea { min-height: 110px; resize: vertical; }
-    .btn { display: inline-block; border: 0; background: #087fbd; color: white; padding: 14px 22px; border-radius: 7px; font-size: 16px; cursor: pointer; margin-top: 20px; text-decoration: none; }
+    input, select, textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #cbd9e3;
+      border-radius: 7px;
+      font: inherit;
+    }
+    textarea { min-height: 100px; resize: vertical; }
+    .btn {
+      display: inline-block;
+      border: 0;
+      background: #087fbd;
+      color: white;
+      padding: 14px 22px;
+      border-radius: 7px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      text-decoration: none;
+    }
     .note { background: #fff7df; padding: 13px; border-radius: 8px; }
-    #form-message { display: none; background: #e6f6eb; color: #176534; padding: 15px; border-radius: 8px; margin-top: 20px; }
     footer { background: #102c42; color: white; text-align: center; padding: 25px; }
     footer a { color: white; }
   </style>
 </head>
 <body>
+
 <header>
   <a class="logo" href="index.html">PureWater</a>
   <nav>
@@ -36,22 +72,27 @@
 </header>
 
 <main>
-  <div class="form-card">
+  <section class="card">
     <h1>Get in Touch</h1>
-    <p>Tell us what you need. Explore how a lead-generation form works on this demo website.</p>
-    <p class="note"><strong>Practice mode:</strong> This form does not send or save your information yet. Do not enter real personal details.</p>
+    <p>Fill out this form to practise a lead-generation journey.</p>
+
+    <p class="note">
+      <strong>Demo mode:</strong> This form does not send or save your details.
+      Use sample information only.
+    </p>
 
     <form id="enquiry-form">
       <label for="name">Full Name *</label>
-      <input id="name" name="name" type="text" autocomplete="name" required placeholder="Enter your name">
+      <input id="name" name="name" type="text" required placeholder="Demo Customer">
 
       <label for="email">Email Address *</label>
-      <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+      <input id="email" name="email" type="email" required placeholder="demo@example.com">
 
       <label for="phone">Phone Number *</label>
-      <input id="phone" name="phone" type="tel" autocomplete="tel" required pattern="[0-9+\-\s()]{7,20}" placeholder="Enter your phone number">
+      <input id="phone" name="phone" type="tel"
+        pattern="[0-9+\-\s()]{7,20}" required placeholder="Sample phone number">
 
-      <label for="interest">What are you interested in?</label>
+      <label for="interest">Product Interest</label>
       <select id="interest" name="interest">
         <option value="RO Filter">RO Water Filter</option>
         <option value="UV Filter">UV Water Filter</option>
@@ -60,14 +101,11 @@
       </select>
 
       <label for="message">Your Message</label>
-      <textarea id="message" name="message" placeholder="Write your question here"></textarea>
+      <textarea id="message" name="message" placeholder="Optional demo message"></textarea>
 
       <button class="btn" type="submit">Submit Enquiry</button>
     </form>
-
-    <div id="form-message" role="status"></div>
-    <p><a href="water-filters.html">← Browse Water Filters</a></p>
-  </div>
+  </section>
 </main>
 
 <footer>
@@ -81,18 +119,17 @@
   document.getElementById("enquiry-form").addEventListener("submit", function(event) {
     event.preventDefault();
 
+    // Demo event for future GTM setup.
     window.dataLayer.push({
       event: "generate_lead",
       form_name: "Water Filter Enquiry",
       demo_mode: true
     });
 
-    const message = document.getElementById("form-message");
-    message.textContent = "Demo submission successful! No information was sent or saved. The Thank You page will be connected later.";
-    message.style.display = "block";
-
-    this.reset();
+    // Continue to the confirmation page.
+    window.location.href = "thank-you.html";
   });
 </script>
+
 </body>
 </html>
