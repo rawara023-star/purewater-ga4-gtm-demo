@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Water Filter Guide | PureWater</title>
+  <meta name="description" content="Explore our demo water filter buying guide.">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; color: #183047; background: #f5faff; }
+    header { background: white; padding: 18px 7%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    header a { color: #183047; text-decoration: none; margin-right: 14px; }
+    .logo { font-size: 24px; font-weight: bold; color: #087fbd; }
+    main { max-width: 950px; margin: auto; padding: 45px 20px 60px; }
+    .hero { background: #e5f5ff; padding: 35px; border-radius: 14px; text-align: center; }
+    h1 { font-size: 34px; }
+    p, li { color: #5d7080; line-height: 1.8; }
+    .card { background: white; margin-top: 25px; padding: 25px; border-radius: 12px; box-shadow: 0 4px 18px #17304710; }
+    .btn { display: inline-block; background: #087fbd; color: white; padding: 14px 20px; border-radius: 7px; text-decoration: none; margin: 8px 5px; }
+    .secondary { background: #e8f5fc; color: #087fbd; }
+    .note { background: #fff7df; padding: 13px; border-radius: 8px; }
+    footer { background: #102c42; color: white; text-align: center; padding: 25px; }
+    footer a { color: white; }
+  </style>
+</head>
+<body>
+<header>
+  <a class="logo" href="index.html">PureWater</a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="water-filters.html">Water Filters</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Free Water Filter Buying Guide</h1>
+    <p>Learn what to consider before choosing a water filter for your home.</p>
+    <a class="btn" id="download-guide" href="water-filter-buying-guide.pdf" download>Download Free PDF Guide</a>
+  </section>
+
+  <section class="card">
+    <h2>What will you learn?</h2>
+    <ul>
+      <li>Basic differences between RO, UV and UF filtration.</li>
+      <li>How to compare product features and maintenance needs.</li>
+      <li>What to check before choosing a water filter.</li>
+      <li>How to compare costs and replacement filters.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Quick Buying Checklist</h2>
+    <p><strong>1. Understand your water:</strong> Water quality varies by location. Consider getting it tested before choosing a system.</p>
+    <p><strong>2. Compare technologies:</strong> RO, UV and UF work differently. Select a system based on your water quality and needs.</p>
+    <p><strong>3. Check maintenance:</strong> Review filter replacement schedules, servicing and ongoing costs.</p>
+    <p><strong>4. Verify product claims:</strong> Look for reliable specifications and appropriate certifications.</p>
+    <p class="note"><strong>Demo note:</strong> The downloadable PDF will be added separately. The download button will work once that file is available in this repository.</p>
+  </section>
+
+  <div style="text-align:center; margin-top:30px;">
+    <a class="btn" href="contact.html">Ask a Question</a>
+    <a class="btn secondary" href="water-filters.html">Browse Products</a>
+  </div>
+</main>
+
+<footer>
+  <p>PureWater — Marketing Tracking Demo</p>
+  <a href="privacy-policy.html">Privacy Policy</a>
+</footer>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  document.getElementById("download-guide").addEventListener("click", function() {
+    window.dataLayer.push({
+      event: "file_download",
+      file_name: "water-filter-buying-guide.pdf",
+      link_text: "Download Free PDF Guide",
+      demo_mode: true
+    });
+  });
+</script>
+</body>
+</html>
