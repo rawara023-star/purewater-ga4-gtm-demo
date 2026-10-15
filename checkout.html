@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Checkout | PureWater</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; color: #183047; background: #f5faff; }
+    header { background: white; padding: 18px 7%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    header a { color: #183047; text-decoration: none; margin-right: 14px; }
+    .logo { font-size: 24px; font-weight: bold; color: #087fbd; }
+    main { max-width: 850px; margin: auto; padding: 40px 20px 60px; }
+    .card { background: white; padding: 28px; border-radius: 14px; box-shadow: 0 4px 18px #17304712; margin-bottom: 22px; }
+    h1 { margin-top: 0; font-size: 32px; }
+    p { color: #5d7080; line-height: 1.7; }
+    label { display: block; font-weight: bold; margin: 16px 0 7px; }
+    input, select { width: 100%; padding: 12px; border: 1px solid #cbd9e3; border-radius: 7px; font: inherit; }
+    .price { color: #087fbd; font-size: 24px; font-weight: bold; }
+    .btn { display: inline-block; border: 0; background: #087fbd; color: white; padding: 14px 20px; border-radius: 7px; cursor: pointer; font-size: 16px; text-decoration: none; margin-top: 18px; }
+    .secondary { background: #e8f5fc; color: #087fbd; }
+    .note { background: #fff7df; padding: 13px; border-radius: 8px; }
+    #message { display: none; background: #e6f6eb; padding: 15px; border-radius: 8px; color: #176534; margin-top: 20px; }
+    footer { background: #102c42; color: white; text-align: center; padding: 25px; }
+  </style>
+</head>
+<body>
+<header>
+  <a class="logo" href="index.html">PureWater</a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="water-filters.html">Water Filters</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Demo Checkout</h1>
+  <p class="note"><strong>Practice only:</strong> No real order, payment, delivery or personal-data storage will take place.</p>
+
+  <section class="card">
+    <h2>Your Demo Product</h2>
+
+    <label for="product">Choose Product</label>
+    <select id="product">
+      <option value="ro">PureWater RO Filter — ₹8,999</option>
+      <option value="uv">PureWater UV Filter — ₹5,499</option>
+      <option value="uf">PureWater UF Filter — ₹3,499</option>
+    </select>
+
+    <label for="quantity">Quantity</label>
+    <input id="quantity" type="number" min="1" max="10" value="1">
+
+    <p>Demo total:</p>
+    <div class="price" id="total">₹8,999</div>
+    <button class="btn secondary" id="add-cart" type="button">Add to Demo Cart</button>
+  </section>
+
+  <section class="card">
+    <h2>Demo Order Details</h2>
+    <p>Use sample information only. This checkout does not send or save the details.</p>
+
+    <form id="checkout-form">
+      <label for="name">Sample Name *</label>
+      <input id="name" type="text" required placeholder="Demo Customer">
+
+      <label for="email">Sample Email *</label>
+      <input id="email" type="email" required placeholder="demo@example.com">
+
+      <label for="address">Sample Address *</label>
+      <input id="address" type="text" required placeholder="Demo address">
+
+      <button class="btn" type="submit">Place Demo Order</button>
+    </form>
+
+    <div id="message" role="status"></div>
+  </section>
+
+  <a class="btn secondary" href="water-filters.html">← Back to Products</a>
+</main>
+
+<footer>
+  <p>PureWater — Marketing Tracking Demo</p>
+</footer>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  const products = {
+    ro: { id: "ro_filter", name: "PureWater RO Filter", price: 8999 },
+    uv: { id: "uv_filter", name: "PureWater UV Filter", price: 5499 },
+    uf: { id: "uf_filter", name: "PureWater UF Filter", price: 3499 }
+  };
+
+  const productSelect = document.getElementById("product");
+  const quantityInput = document.getElementById("quantity");
+  let cartAdded = false;
+
+  function selectedProduct() {
+    return products[productSelect.value];
+  }
+
+  function updateTotal() {
+    let quantity = Math.max(1, Math.min(10, Number(quantityInput.value) || 1));
+    quantityInput.value = quantity;
+    document.getElementById("total").textContent =
+      "₹" + (selectedProduct().price * quantity).toLocaleString("en-IN");
+    cartAdded = false;
+  }
+
+  productSelect.addEventListener("change", updateTotal);
+  quantityInput.addEventListener("input", updateTotal);
+
+  document.getElementById("add-cart").addEventListener("click", function() {
+    const product = selectedProduct();
+    const quantity = Number(quantityInput.value);
+    const value = product.price * quantity;
+
+    window.dataLayer.push({
+      event: "add_to_cart",
+      ecommerce: {
+        currency: "INR",
+        value: value,
+        items: [{
+          item_id: product.id,
+          item_name: product.name,
+          price: product.price,
+          quantity: quantity
+        }]
+      },
+      demo_mode: true
+    });
+
+    cartAdded = true;
+    document.getElementById("message").textContent =
+      "Product added to the demo cart. No real purchase has occurred.";
+    document.getElementById("message").style.display = "block";
+  });
+
+  document.getElementById("checkout-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    if (!cartAdded) {
+      window.dataLayer.push({
+        event: "begin_checkout",
+        ecommerce: {
+          currency: "INR",
+          value: selectedProduct().price * Number(quantityInput.value),
+          items: [{
+            item_id: selectedProduct().id,
+            item_name: selectedProduct().name,
+            price: selectedProduct().price,
+            quantity: Number(quantityInput.value)
+          }]
+        },
+        demo_mode: true
+      });
+    }
+
+    const product = selectedProduct();
+    const quantity = Number(quantityInput.value);
+    const total = product.price * quantity;
+
+    const order = {
+      product_id: product.id,
+      product_name: product.name,
+      price: product.price,
+      quantity: quantity,
+      total: total
+    };
+
+    sessionStorage.setItem("purewater_demo_order", JSON.stringify(order));
+    window.location.href = "order-confirmation.html";
+  });
+
+  updateTotal();
+</script>
+</body>
+</html>
