@@ -1,161 +1,118 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-P34CFP6D');</script>
-  <!-- End Google Tag Manager -->
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore ten demo water filters at PureWater.">
   <title>All Water Filters | PureWater</title>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P34CFP6D');
+  </script>
+  <!-- End Google Tag Manager -->
 
   <style>
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      color: #183047;
-      background: #f7fbff;
+      background: #f5f8fc;
+      color: #172033;
     }
     header {
-      background: white;
-      padding: 18px 7%;
+      background: #073b66;
+      color: white;
+      padding: 22px 6%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 12px;
     }
-    header a {
-      color: #183047;
-      text-decoration: none;
-      margin-right: 14px;
-    }
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: #087fbd;
-    }
+    header a { color: white; text-decoration: none; }
+    .brand { font-size: 24px; font-weight: bold; }
+    nav { display: flex; gap: 20px; flex-wrap: wrap; }
     .hero {
-      background: #e6f6ff;
+      padding: 38px 6%;
+      background: #e2f3ff;
       text-align: center;
-      padding: 48px 20px;
     }
-    .hero h1 { margin: 0 0 12px; }
-    .hero p { color: #536b7d; line-height: 1.7; }
-    .container {
-      max-width: 1150px;
-      margin: auto;
-      padding: 30px 20px 60px;
-    }
-    .note {
-      background: #fff7df;
-      padding: 15px;
-      border-radius: 8px;
-      line-height: 1.6;
-      margin-bottom: 25px;
-    }
+    .hero h1 { margin: 0 0 10px; font-size: 32px; }
+    .hero p { margin: 0; color: #40536b; }
+    .container { max-width: 1200px; margin: auto; padding: 30px 18px 50px; }
+    .count { margin-bottom: 22px; color: #526174; }
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
     }
     .card {
       background: white;
       border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 4px 18px #17304712;
-      border: 1px solid #e4edf5;
+      box-shadow: 0 4px 16px rgba(18, 48, 80, .09);
+      display: flex;
+      flex-direction: column;
     }
-    .card img {
+    .product-image {
       width: 100%;
-      height: 210px;
-      object-fit: cover;
+      height: 220px;
+      object-fit: contain;
+      background: #fff;
+      padding: 14px;
+    }
+    .card-content { padding: 18px; display: flex; flex-direction: column; flex: 1; }
+    .card h2 { font-size: 19px; margin: 0 0 10px; }
+    .description { color: #657186; line-height: 1.5; flex: 1; margin: 0 0 14px; }
+    .price { color: #087443; font-size: 22px; font-weight: bold; margin-bottom: 16px; }
+    .button {
       display: block;
-    }
-    .content { padding: 20px; }
-    .content h2 { font-size: 21px; }
-    .content p { color: #5d7080; line-height: 1.6; }
-    .price {
-      color: #087fbd;
-      font-size: 23px;
-      font-weight: bold;
-      margin: 12px 0;
-    }
-    .btn {
-      display: inline-block;
-      background: #087fbd;
-      color: white;
-      padding: 12px 17px;
-      border-radius: 7px;
-      text-decoration: none;
-      margin: 5px 5px 5px 0;
-    }
-    .secondary {
-      background: #e8f5fc;
-      color: #087fbd;
-    }
-    footer {
-      background: #102c42;
-      color: white;
       text-align: center;
-      padding: 25px;
+      padding: 12px;
+      border-radius: 8px;
+      background: #0878c9;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
     }
-    footer a { color: white; margin: 0 8px; }
+    .button:hover { background: #055c9b; }
+    footer { text-align: center; padding: 22px; background: #073b66; color: white; }
   </style>
 </head>
-
 <body>
+
   <!-- Google Tag Manager (noscript) -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P34CFP6D"
-    height="0" width="0"
-    style="display:none;visibility:hidden"></iframe>
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
   <!-- End Google Tag Manager (noscript) -->
 
   <header>
-    <a class="logo" href="index.html">💧 PureWater</a>
+    <a class="brand" href="index.html">PureWater</a>
     <nav>
       <a href="index.html">Home</a>
       <a href="water-filters.html">All Products</a>
-      <a href="free-guide.html">Free Guide</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>Explore All Water Filters</h1>
-    <p>Ten demo products to compare. Prices are illustrative.</p>
+    <h1>All Water Filters</h1>
+    <p>Explore our demo collection and find the right water filter for your needs.</p>
   </section>
 
   <main class="container">
-    <div class="note">
-      <strong>Demo website:</strong>
-      Products and prices are for practice only.
-      No real orders or payments will be processed.
-    </div>
-
-    <section class="products" id="product-list"></section>
-
-    <div style="text-align:center;margin-top:35px">
-      <a class="btn" href="contact.html"
-         data-event="generate_lead">Ask for a Recommendation</a>
-      <a class="btn secondary" href="index.html">Back to Home</a>
-    </div>
+    <p class="count">Showing <strong id="product-count">10</strong> products</p>
+    <div class="products" id="products"></div>
   </main>
 
-  <footer>
-    <p>PureWater — Marketing Tracking Demo</p>
-    <a href="privacy-policy.html">Privacy Policy</a>
-    <a href="contact.html">Contact</a>
-    <p>Demo products only. No real payments.</p>
-  </footer>
+  <footer>PureWater Demo Store · For learning and tracking practice</footer>
 
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -163,282 +120,147 @@
     const products = [
       {
         id: "best-overall",
-        itemId: "best_overall_filter",
         name: "Best Overall Filter",
         price: 4999,
-        image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80",
-        description: "An all-round demo filtration option for households."
+        description: "A versatile water filter for everyday home use.",
+        image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=700&q=80",
+        imageAlt: "Water bottle representing the Best Overall Filter"
       },
       {
         id: "budget-friendly",
-        itemId: "budget_friendly_filter",
         name: "Budget Friendly Filter",
         price: 2499,
-        image: "https://images.unsplash.com/photo-1564419320461-6870880221ad?auto=format&fit=crop&w=800&q=80",
-        description: "A lower-cost demo option for price comparison."
+        description: "An affordable option for everyday water filtration.",
+        image: "https://images.unsplash.com/photo-1523362628745-0c100150b1c8?auto=format&fit=crop&w=700&q=80",
+        imageAlt: "Water bottle representing the Budget Friendly Filter"
       },
       {
         id: "compact",
-        itemId: "compact_water_filter",
         name: "Compact Water Filter",
         price: 3299,
-        image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=800&q=80",
-        description: "A compact demo option for smaller kitchens."
+        description: "A compact option for smaller spaces.",
+        image: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=700&q=80",
+        imageAlt: "Fresh drinking water representing the Compact Water Filter"
       },
       {
         id: "ro",
-        itemId: "ro_filter",
         name: "PureWater RO Filter",
         price: 8999,
-        image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=800&q=80",
-        description: "A demo reverse osmosis filter."
+        description: "A reverse osmosis model for your demo collection.",
+        image: "https://images.unsplash.com/photo-1564419320461-6870880221ad?auto=format&fit=crop&w=700&q=80",
+        imageAlt: "Water filtration product image for the RO Filter"
       },
       {
         id: "uv",
-        itemId: "uv_filter",
         name: "PureWater UV Filter",
         price: 5499,
-        image: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=800&q=80",
-        description: "A demo UV filtration option."
+        description: "A UV filtration model for everyday home use.",
+        image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=700&q=80",
+        imageAlt: "Clean water themed image for the UV Filter"
       },
       {
         id: "uf",
-        itemId: "uf_filter",
         name: "PureWater UF Filter",
         price: 3499,
-        image: "https://images.unsplash.com/photo-1564419320461-6870880221ad?auto=format&fit=crop&w=800&q=80",
-        description: "A demo ultrafiltration product."
+        description: "A simple UF model in the PureWater demo range.",
+        image: "https://images.unsplash.com/photo-1532634896-26909d0d4b8a?auto=format&fit=crop&w=700&q=80",
+        imageAlt: "Water-themed image for the UF Filter"
       },
       {
         id: "alkaline",
-        itemId: "alkaline_filter",
         name: "PureWater Alkaline Filter",
         price: 6499,
-        image: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=800&q=80",
-        description: "An illustrative alkaline-filter listing."
+        description: "An alkaline filter option in our demo collection.",
+        image: "https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?auto=format&fit=crop&w=700&q=80",
+        imageAlt: "Fresh beverage and water image for the Alkaline Filter"
       },
       {
         id: "copper",
-        itemId: "copper_filter",
         name: "PureWater Copper Filter",
         price: 4499,
-        image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80",
-        description: "An illustrative copper-filter listing."
+        description: "A copper-themed option for this demo store.",
+        image: "https://images.unsplash.com/photo-1536935338788846bb9981813?auto=format&fit=crop&w=700&q=80",
+        imageAlt: "Copper-toned product themed image"
       },
       {
         id: "portable",
-        itemId: "portable_filter",
         name: "PureWater Portable Filter",
         price: 1499,
-        image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=800&q=80",
-        description: "A portable demo filter."
+        description: "A portable water option for travel and everyday use.",
+        image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=80",
+        imageAlt: "Outdoor image representing portable water use"
       },
       {
         id: "premium-ro",
-        itemId: "premium_ro_filter",
         name: "PureWater Premium RO",
         price: 10999,
-        image: "https://images.unsplash.com/photo-1564419320461-6870880221ad?auto=format&fit=crop&w=800&q=80",
-        description: "A premium illustrative RO product."
+        description: "A premium option in the PureWater demo collection.",
+        image: "https://images.unsplash.com/photo-1606112219348-204d7d8b94ee?auto=format&fit=crop&w=700&q=80",
+        imageAlt: "Premium themed product image"
       }
     ];
 
-    function formatPrice(price) {
-      return "₹" + price.toLocaleString("en-IN");
-    }
+    const formatPrice = price =>
+      "₹" + price.toLocaleString("en-IN");
 
-    const productList = document.getElementById("product-list");
+    document.getElementById("product-count").textContent = products.length;
 
-    productList.innerHTML = products.map(function(product) {
-      return `
-        <article class="card">
-          <img src="${product.image}" alt="${product.name}" loading="lazy">
-          <div class="content">
-            <h2>${product.name}</h2>
-            <p>${product.description}</p>
-            <div class="price">${formatPrice(product.price)}</div>
-            <a class="btn"
-               href="product-details.html?product=${encodeURIComponent(product.id)}"
-               data-event="select_item"
-               data-item-id="${product.itemId}"
-               data-item-name="${product.name}">
-               View Details
-            </a>
-            <a class="btn secondary"
-               href="checkout.html?item=${encodeURIComponent(product.id)}"
-               data-event="add_to_cart"
-               data-item-id="${product.itemId}"
-               data-item-name="${product.name}">
-               Demo Buy
-            </a>
-          </div>
-        </article>`;
-    }).join("");
+    document.getElementById("products").innerHTML = products.map((product, index) => `
+      <article class="card">
+        <img
+          class="product-image"
+          src="${product.image}"
+          alt="${product.imageAlt}"
+          loading="${index < 3 ? "eager" : "lazy"}"
+          onerror="this.onerror=null;this.src='https://placehold.co/600x400/eaf4fb/173b5e?text=PureWater+Product';"
+        >
+        <div class="card-content">
+          <h2>${product.name}</h2>
+          <p class="description">${product.description}</p>
+          <div class="price">${formatPrice(product.price)}</div>
+          <a
+            class="button"
+            href="product-details.html?product=${encodeURIComponent(product.id)}"
+            data-event="select_item"
+            data-product-id="${product.id}"
+            data-product-name="${product.name}"
+            data-product-price="${product.price}"
+          >View Details</a>
+        </div>
+      </article>
+    `).join("");
 
     window.dataLayer.push({
       event: "view_item_list",
       ecommerce: {
-        currency: "INR",
-        item_list_name: "Water Filters",
-        items: products.map(function(product, index) {
-          return {
-            item_id: product.itemId,
-            item_name: product.name,
-            price: product.price,
-            index: index
-          };
-        })
-      },
-      demo_mode: true
+        item_list_name: "All Water Filters",
+        items: products.map((product, index) => ({
+          item_id: product.id,
+          item_name: product.name,
+          price: product.price,
+          index: index + 1
+        }))
+      }
     });
 
-    document.querySelectorAll("[data-event]").forEach(function(link) {
+    document.querySelectorAll('[data-event="select_item"]').forEach(link => {
       link.addEventListener("click", function() {
-        const product = products.find(function(item) {
-          return item.itemId === link.dataset.itemId;
-        });
+        const product = products.find(p => p.id === this.dataset.productId);
+        if (!product) return;
 
         window.dataLayer.push({
-          event: link.dataset.event,
-          item_name: link.dataset.itemName || "",
-          ecommerce: product ? {
-            currency: "INR",
-            value: product.price,
+          event: "select_item",
+          ecommerce: {
+            item_list_name: "All Water Filters",
             items: [{
-              item_id: product.itemId,
+              item_id: product.id,
               item_name: product.name,
-              price: product.price,
-              quantity: 1
+              price: product.price
             }]
-          } : undefined,
-          demo_mode: true
+          }
         });
       });
     });
   </script>
 </body>
 </html>
-'''
-
-details_html = '''<!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-P34CFP6D');</script>
-  <!-- End Google Tag Manager -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Product details for the PureWater demo store.">
-  <title>Product Details | PureWater</title>
-  <style>
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: Arial, sans-serif; color: #183047; background: #f7fbff; }
-    header { background: white; padding: 18px 7%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-    header a { color: #183047; text-decoration: none; margin-right: 14px; }
-    .logo { font-size: 24px; font-weight: bold; color: #087fbd; }
-    main { max-width: 1050px; margin: auto; padding: 40px 20px; }
-    .product { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 35px; background: white; border-radius: 14px; padding: 25px; box-shadow: 0 4px 18px #17304712; }
-    .product img { width: 100%; height: 350px; object-fit: cover; border-radius: 10px; }
-    h1 { font-size: 32px; }
-    p, li { color: #586e7d; line-height: 1.8; }
-    .price { color: #087fbd; font-size: 27px; font-weight: bold; }
-    .btn { display: inline-block; background: #087fbd; color: white; padding: 13px 18px; border-radius: 7px; text-decoration: none; margin: 6px 5px 6px 0; }
-    .secondary { background: #e8f5fc; color: #087fbd; }
-    .note { background: #fff7df; padding: 13px; border-radius: 8px; }
-    footer { background: #102c42; color: white; text-align: center; padding: 25px; margin-top: 35px; }
-    footer a { color: white; }
-  </style>
-</head>
-<body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P34CFP6D"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  <header>
-    <a class="logo" href="index.html">💧 PureWater</a>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="water-filters.html">Water Filters</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-  <main>
-    <div class="product">
-      <div><img id="product-image" src="" alt="Water filter product"></div>
-      <div>
-        <p>PUREWATER HOME COLLECTION</p>
-        <h1 id="product-name">Product</h1>
-        <p id="product-description"></p>
-        <div class="price" id="product-price"></div>
-        <p>Demo product details for learning website analytics and ecommerce tracking.</p>
-        <ul>
-          <li>Product comparison practice</li>
-          <li>Demo shopping journey</li>
-          <li>No real payment required</li>
-        </ul>
-        <p class="note"><strong>Important:</strong> This is a practice website. No real product will be shipped and no payment will be collected.</p>
-        <a class="btn" id="buy-button" href="checkout.html">Continue to Demo Checkout</a>
-        <a class="btn secondary" href="water-filters.html">Back to Products</a>
-        <p><a href="contact.html">Have a question? Contact us</a></p>
-      </div>
-    </div>
-  </main>
-  <footer><p>PureWater — Marketing Tracking Demo</p><a href="privacy-policy.html">Privacy Policy</a></footer>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    const products = {
-      "best-overall": { id:"best_overall_filter", name:"Best Overall Filter", price:4999, image:"https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80", description:"An all-round demo filtration option for households." },
-      "budget-friendly": { id:"budget_friendly_filter", name:"Budget Friendly Filter", price:2499, image:"https://images.unsplash.com/photo-1564419320461-6870880221ad?auto=format&fit=crop&w=800&q=80", description:"A lower-cost demo option for price comparison." },
-      "compact": { id:"compact_water_filter", name:"Compact Water Filter", price:3299, image:"https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=800&q=80", description:"A compact demo option for smaller kitchens and spaces." },
-      "ro": { id:"ro_filter", name:"PureWater RO Filter", price:8999, image:"https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=800&q=80", description:"A demo reverse osmosis filter." },
-      "uv": { id:"uv_filter", name:"PureWater UV Filter", price:5499, image:"https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=800&q=80", description:"A demo UV filtration option." },
-      "uf": { id:"uf_filter", name:"PureWater UF Filter", price:3499, image:"https://images.unsplash.com/photo-1564419320461-6870880221ad?auto=format&fit=crop&w=800&q=80", description:"A demo ultrafiltration product." },
-      "alkaline": { id:"alkaline_filter", name:"PureWater Alkaline Filter", price:6499, image:"https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=800&q=80", description:"An illustrative alkaline-filter listing." },
-      "copper": { id:"copper_filter", name:"PureWater Copper Filter", price:4499, image:"https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80", description:"An illustrative copper-filter listing." },
-      "portable": { id:"portable_filter", name:"PureWater Portable Filter", price:1499, image:"https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=800&q=80", description:"A portable demo filter." },
-      "premium-ro": { id:"premium_ro_filter", name:"PureWater Premium RO", price:10999, image:"https://images.unsplash.com/photo-1564419320461-6870880221ad?auto=format&fit=crop&w=800&q=80", description:"A premium illustrative RO product." }
-    };
-    const params = new URLSearchParams(window.location.search);
-    const key = params.get("product") || params.get("item") || "best-overall";
-    const product = products[key] || products["best-overall"];
-    document.getElementById("product-name").textContent = product.name;
-    document.getElementById("product-price").textContent = "₹" + product.price.toLocaleString("en-IN");
-    document.getElementById("product-description").textContent = product.description;
-    document.getElementById("product-image").src = product.image;
-    document.getElementById("product-image").alt = product.name;
-    document.getElementById("buy-button").href = "checkout.html?item=" + encodeURIComponent(key);
-    window.dataLayer.push({
-      event: "view_item",
-      ecommerce: { currency: "INR", value: product.price, items: [{ item_id: product.id, item_name: product.name, price: product.price, quantity: 1 }] },
-      demo_mode: true
-    });
-    document.getElementById("buy-button").addEventListener("click", function() {
-      window.dataLayer.push({
-        event: "begin_checkout",
-        ecommerce: { currency: "INR", value: product.price, items: [{ item_id: product.id, item_name: product.name, price: product.price, quantity: 1 }] },
-        demo_mode: true
-      });
-    });
-  </script>
-</body>
-</html>
-'''
-
-files = {
-    "index.html": index_html,
-    "water-filters.html": water_html,
-    "product-details.html": details_html
-}
-for filename, content in files.items():
-    with open(os.path.join(base, filename), "w", encoding="utf-8") as f:
-        f.write(content)
-zip_path = os.path.join(base, "purewater-corrected-product-pages.zip")
-with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
-    for filename in files:
-        z.write(os.path.join(base, filename), arcname=filename)
-print("Ready. GTM code is preserved in all 3 files. ZIP created at " + zip_path)
-text
